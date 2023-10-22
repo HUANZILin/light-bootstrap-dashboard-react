@@ -13,7 +13,7 @@ import {
   Col,
 } from "react-bootstrap";
 
-function TableList() {
+function UserList() {
   return (
     <>
       <Container fluid>
@@ -21,20 +21,17 @@ function TableList() {
           <Col md="12">
             <Card className="strpied-tabled-with-hover">
               <Card.Header>
-                <Card.Title as="h4">Striped Table with Hover</Card.Title>
-                <p className="card-category">
-                  Here is a subtitle for this table
-                </p>
+                <Card.Title as="h4">會員列表</Card.Title>
               </Card.Header>
               <Card.Body className="table-full-width table-responsive px-0">
                 <Table className="table-hover table-striped">
                   <thead>
                     <tr>
-                      <th className="border-0">ID</th>
-                      <th className="border-0">Name</th>
-                      <th className="border-0">Salary</th>
-                      <th className="border-0">Country</th>
-                      <th className="border-0">City</th>
+                      <th className="border-0">會員ID</th>
+                      <th className="border-0">會員名稱</th>
+                      <th className="border-0">電話</th>
+                      <th className="border-0">地址</th>
+                      <th className="border-0">常用取貨門市</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -158,4 +155,4 @@ function TableList() {
   );
 }
 
-export default TableList;
+export default UserList;

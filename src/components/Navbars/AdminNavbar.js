@@ -132,7 +132,7 @@ function Header() {
                 onClick={(e) => e.preventDefault()}
               >
                 <i className="nc-icon nc-zoom-split"></i>
-                <span className="d-lg-block"> Search</span>
+                <span className="d-lg-block">搜尋</span>
               </Nav.Link>
             </Nav.Item>
           </Nav>
@@ -143,7 +143,7 @@ function Header() {
                 href="#pablo"
                 onClick={(e) => e.preventDefault()}
               >
-                <span className="no-icon">Account</span>
+                <span className="no-icon">帳號</span>
               </Nav.Link>
             </Nav.Item>
             <Dropdown as={Nav.Item}>
@@ -156,7 +156,7 @@ function Header() {
                 variant="default"
                 className="m-0"
               >
-                <span className="no-icon">Dropdown</span>
+                <span className="no-icon">下拉選單</span>
               </Dropdown.Toggle>
               <Dropdown.Menu aria-labelledby="navbarDropdownMenuLink">
                 <Dropdown.Item
@@ -198,7 +198,7 @@ function Header() {
                 href="#pablo"
                 onClick={(e) => e.preventDefault()}
               >
-                <span className="no-icon">Log out</span>
+                <span className="no-icon">登出</span>
               </Nav.Link>
             </Nav.Item>
           </Nav>

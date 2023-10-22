@@ -10,7 +10,7 @@ import {
   Nav,
   Container,
   Row,
-  Col
+  Col,
 } from "react-bootstrap";
 
 function User() {
@@ -21,37 +21,35 @@ function User() {
           <Col md="8">
             <Card>
               <Card.Header>
-                <Card.Title as="h4">Edit Profile</Card.Title>
+                <Card.Title as="h4">編輯管理員資料</Card.Title>
               </Card.Header>
               <Card.Body>
                 <Form>
                   <Row>
                     <Col className="pr-1" md="5">
                       <Form.Group>
-                        <label>Company (disabled)</label>
+                        <label>公司 (不可更改)</label>
                         <Form.Control
-                          defaultValue="Creative Code Inc."
+                          defaultValue="騏騏資訊"
                           disabled
-                          placeholder="Company"
+                          placeholder="公司"
                           type="text"
                         ></Form.Control>
                       </Form.Group>
                     </Col>
                     <Col className="px-1" md="3">
                       <Form.Group>
-                        <label>Username</label>
+                        <label>帳號</label>
                         <Form.Control
-                          defaultValue="michael23"
-                          placeholder="Username"
+                          defaultValue="manager1"
+                          placeholder="帳號"
                           type="text"
                         ></Form.Control>
                       </Form.Group>
                     </Col>
                     <Col className="pl-1" md="4">
                       <Form.Group>
-                        <label htmlFor="exampleInputEmail1">
-                          Email address
-                        </label>
+                        <label htmlFor="exampleInputEmail1">EMAIL</label>
                         <Form.Control
                           placeholder="Email"
                           type="email"
@@ -62,20 +60,20 @@ function User() {
                   <Row>
                     <Col className="pr-1" md="6">
                       <Form.Group>
-                        <label>First Name</label>
+                        <label>姓氏</label>
                         <Form.Control
-                          defaultValue="Mike"
-                          placeholder="Company"
+                          defaultValue="騏"
+                          placeholder="姓氏"
                           type="text"
                         ></Form.Control>
                       </Form.Group>
                     </Col>
                     <Col className="pl-1" md="6">
                       <Form.Group>
-                        <label>Last Name</label>
+                        <label>名字</label>
                         <Form.Control
-                          defaultValue="Andrew"
-                          placeholder="Last Name"
+                          defaultValue="騏"
+                          placeholder="名字"
                           type="text"
                         ></Form.Control>
                       </Form.Group>
@@ -84,10 +82,10 @@ function User() {
                   <Row>
                     <Col md="12">
                       <Form.Group>
-                        <label>Address</label>
+                        <label>地址</label>
                         <Form.Control
                           defaultValue="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09"
-                          placeholder="Home Address"
+                          placeholder="地址"
                           type="text"
                         ></Form.Control>
                       </Form.Group>
@@ -96,29 +94,29 @@ function User() {
                   <Row>
                     <Col className="pr-1" md="4">
                       <Form.Group>
-                        <label>City</label>
+                        <label>縣市</label>
                         <Form.Control
-                          defaultValue="Mike"
-                          placeholder="City"
+                          defaultValue="高雄市"
+                          placeholder="縣市"
                           type="text"
                         ></Form.Control>
                       </Form.Group>
                     </Col>
                     <Col className="px-1" md="4">
                       <Form.Group>
-                        <label>Country</label>
+                        <label>國家</label>
                         <Form.Control
-                          defaultValue="Andrew"
-                          placeholder="Country"
+                          defaultValue="台灣"
+                          placeholder="國家"
                           type="text"
                         ></Form.Control>
                       </Form.Group>
                     </Col>
                     <Col className="pl-1" md="4">
                       <Form.Group>
-                        <label>Postal Code</label>
+                        <label>郵遞區號</label>
                         <Form.Control
-                          placeholder="ZIP Code"
+                          placeholder="郵遞區號"
                           type="number"
                         ></Form.Control>
                       </Form.Group>
@@ -127,7 +125,7 @@ function User() {
                   <Row>
                     <Col md="12">
                       <Form.Group>
-                        <label>About Me</label>
+                        <label>簡介</label>
                         <Form.Control
                           cols="80"
                           defaultValue="Lamborghini Mercy, Your chick she so thirsty, I'm in
@@ -144,7 +142,7 @@ function User() {
                     type="submit"
                     variant="info"
                   >
-                    Update Profile
+                    更新資料
                   </Button>
                   <div className="clearfix"></div>
                 </Form>
@@ -167,9 +165,9 @@ function User() {
                       className="avatar border-gray"
                       src={require("assets/img/faces/face-3.jpg")}
                     ></img>
-                    <h5 className="title">Mike Andrew</h5>
+                    <h5 className="title">騏騏</h5>
                   </a>
-                  <p className="description">michael24</p>
+                  <p className="description">manager1</p>
                 </div>
                 <p className="description text-center">
                   "Lamborghini Mercy <br></br>

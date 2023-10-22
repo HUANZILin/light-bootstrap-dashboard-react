@@ -1,0 +1,69 @@
+import React from "react";
+
+// react-bootstrap components
+import {
+  Badge,
+  Button,
+  Card,
+  Form,
+  Navbar,
+  Nav,
+  Container,
+  Row,
+  Col,
+} from "react-bootstrap";
+
+function Ad() {
+  return (
+    <>
+      <Container fluid>
+        <Row>
+          <Col md="8">
+            <Card>
+              <Card.Header>
+                <Card.Title as="h4">變更廣告橫幅</Card.Title>
+              </Card.Header>
+              <Card.Body>
+                <h5>廣告1</h5>
+                <div className="card-image">
+                  <img
+                    alt="..."
+                    src={require("assets/img/photo-1431578500526-4d9613015464.jpeg")}
+                  ></img>
+                </div>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col md="4">
+            <Card className="card-user">
+              <Card.Body>
+                <h5>廣告2</h5>
+                <div className="card-image">
+                  <img
+                    alt="..."
+                    src={require("assets/img/sidebar-1.jpg")}
+                  ></img>
+                </div>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col md="8">
+            <Card className="card-user">
+              <Card.Body>
+                <h5>廣告3</h5>
+                <div className="card-image">
+                  <img
+                    alt="..."
+                    src={require("assets/img/sidebar-2.jpg")}
+                  ></img>
+                </div>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
+    </>
+  );
+}
+
+export default Ad;
