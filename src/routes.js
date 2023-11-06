@@ -29,6 +29,7 @@ import Fix from "views/Fix";
 import Qa from "views/Qa";
 import Cart from "views/Cart";
 import UserList from "views/UserList";
+import Shop from "views/Shop";
 
 const dashboardRoutes = [
   // {
@@ -61,10 +62,10 @@ const dashboardRoutes = [
     layout: "/admin",
   },
   {
-    path: "/icons",
+    path: "/shop",
     name: "線上商店",
     icon: "nc-icon nc-cart-simple",
-    component: Icons,
+    component: Shop,
     layout: "/admin",
   },
   {

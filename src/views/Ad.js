@@ -1,17 +1,7 @@
 import React, { useState } from "react";
 
 // react-bootstrap components
-import {
-  Badge,
-  Button,
-  Card,
-  Form,
-  Navbar,
-  Nav,
-  Container,
-  Row,
-  Col,
-} from "react-bootstrap";
+import { Card, Container, Row, Col } from "react-bootstrap";
 import { UploadOutlined, LoadingOutlined } from "@ant-design/icons";
 import {
   Button as AntButton,
