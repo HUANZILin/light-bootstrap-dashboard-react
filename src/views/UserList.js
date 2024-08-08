@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 // react-bootstrap components
@@ -10,8 +10,110 @@ const StyledPagination = styled(Pagination)`
   justify-content: center;
 `;
 
-function UserList() {
+const UserList = () => {
+  const mockUsers = [
+    {
+      id: 1,
+      account: "user1@gmail.com",
+      name: "洪政源",
+      phone: "0960986938",
+      address: "新竹市北區榮濱南路25號之6",
+      store: "榮濱門市",
+    },
+    {
+      id: 2,
+      account: "user1@gmail.com",
+      name: "洪政源",
+      phone: "0960986938",
+      address: "新竹市北區榮濱南路25號之6",
+      store: "榮濱門市",
+    },
+    {
+      id: 3,
+      account: "user1@gmail.com",
+      name: "洪政源",
+      phone: "0960986938",
+      address: "新竹市北區榮濱南路25號之6",
+      store: "榮濱門市",
+    },
+    {
+      id: 4,
+      account: "user1@gmail.com",
+      name: "洪政源",
+      phone: "0960986938",
+      address: "新竹市北區榮濱南路25號之6",
+      store: "榮濱門市",
+    },
+    {
+      id: 5,
+      account: "user1@gmail.com",
+      name: "洪政源",
+      phone: "0960986938",
+      address: "新竹市北區榮濱南路25號之6",
+      store: "榮濱門市",
+    },
+    {
+      id: 6,
+      account: "user1@gmail.com",
+      name: "洪政源",
+      phone: "0960986938",
+      address: "新竹市北區榮濱南路25號之6",
+      store: "榮濱門市",
+    },
+    {
+      id: 7,
+      account: "user1@gmail.com",
+      name: "洪政源",
+      phone: "0960986938",
+      address: "新竹市北區榮濱南路25號之6",
+      store: "榮濱門市",
+    },
+    {
+      id: 8,
+      account: "user1@gmail.com",
+      name: "洪政源",
+      phone: "0960986938",
+      address: "新竹市北區榮濱南路25號之6",
+      store: "榮濱門市",
+    },
+    {
+      id: 9,
+      account: "user1@gmail.com",
+      name: "洪政源",
+      phone: "0960986938",
+      address: "新竹市北區榮濱南路25號之6",
+      store: "榮濱門市",
+    },
+    {
+      id: 10,
+      account: "user1@gmail.com",
+      name: "洪政源",
+      phone: "0960986938",
+      address: "新竹市北區榮濱南路25號之6",
+      store: "榮濱門市",
+    },
+    ,
+    {
+      id: 11,
+      account: "user1@gmail.com",
+      name: "洪政源",
+      phone: "0960986938",
+      address: "新竹市北區榮濱南路25號之6",
+      store: "榮濱門市",
+    },
+  ];
+
+  const [minUsers, setMinUsers] = useState(0);
+  const [maxUsers, setMaxUsers] = useState(10);
+
   const onChange = (pageNumber) => {
+    if (pageNumber === 1) {
+      setMinUsers(0);
+      setMaxUsers(10);
+    } else {
+      setMinUsers(10);
+      setMaxUsers(mockUsers.length);
+    }
     console.log("Page: ", pageNumber);
   };
 
@@ -29,61 +131,30 @@ function UserList() {
                   <thead>
                     <tr>
                       <th className="border-0">會員ID</th>
+                      <th className="border-0">會員帳號</th>
                       <th className="border-0">會員名稱</th>
                       <th className="border-0">電話</th>
-                      <th className="border-0">地址</th>
+                      <th className="border-0">常用地址</th>
                       <th className="border-0">常用取貨門市</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>洪政源</td>
-                      <td>0960986938</td>
-                      <td>新竹市北區榮濱南路25號之6</td>
-                      <td>榮濱門市</td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>唐杉棋</td>
-                      <td>0921522902</td>
-                      <td>桃園市大園區大豐一街91號2樓之13</td>
-                      <td>大園門市</td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>張淇熙</td>
-                      <td>0926602877</td>
-                      <td>新北市土城區明街84號10樓</td>
-                      <td>土城門市</td>
-                    </tr>
-                    <tr>
-                      <td>4</td>
-                      <td>姚研葉</td>
-                      <td>0988170788</td>
-                      <td>高雄市前鎮區時代南三路92號3樓</td>
-                      <td>時代南門市</td>
-                    </tr>
-                    <tr>
-                      <td>5</td>
-                      <td>劉筑芝</td>
-                      <td>0917707505</td>
-                      <td>屏東縣竹田鄉東西十路33號</td>
-                      <td>竹田門市</td>
-                    </tr>
-                    <tr>
-                      <td>6</td>
-                      <td>沈剛琪</td>
-                      <td>0961254502</td>
-                      <td>臺中市大肚區遊園路１段18號</td>
-                      <td>大肚門市</td>
-                    </tr>
+                    {mockUsers.slice(minUsers, maxUsers).map((user) => (
+                      <tr key={user.id}>
+                        <td>{user.id}</td>
+                        <td>{user.account}</td>
+                        <td>{user.name}</td>
+                        <td>{user.phone}</td>
+                        <td>{user.address}</td>
+                        <td>{user.store}</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </Table>
                 <StyledPagination
                   showQuickJumper
                   defaultCurrent={1}
-                  total={6}
+                  total={mockUsers.length}
                   onChange={onChange}
                 />
               </Card.Body>
@@ -160,6 +231,6 @@ function UserList() {
       </Container>
     </>
   );
-}
+};
 
 export default UserList;

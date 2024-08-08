@@ -11,37 +11,38 @@ import {
   Input,
 } from "antd";
 
-const getBase64 = (img, callback) => {
-  const reader = new FileReader();
-  reader.addEventListener("load", () => callback(reader.result));
-  reader.readAsDataURL(img);
-};
-
 function Ad() {
   const [loading, setIsLoading] = useState(false);
   const [imageUrl, setImageUrl] = useState();
 
-  const handleChange = (info) => {
-    if (info.file.status === "uploading") {
-      setIsLoading(true);
-      return;
-    }
-    if (info.file.status === "done") {
-      getBase64(info.file.originFileObj, (url) => {
-        setIsLoading(false);
-        setImageUrl(url);
-      });
-    }
+  const props = {
+    name: "file",
+    action: "/",
+    headers: {
+      authorization: "authorization-text",
+    },
+    onChange(info) {
+      if (info.file.status !== "uploading") {
+        console.log(info.file, info.fileList);
+        setIsLoading(true);
+      }
+      setImageUrl(URL.createObjectURL(info.file.originFileObj));
+      if (info.file.status === "done") {
+        message.success(`${info.file.name} file uploaded successfully`);
+      } else if (info.file.status === "error") {
+        message.error(`${info.file.name} file upload failed.`);
+      }
+    },
   };
 
   const [fields1, setFields1] = useState({
-    youtubeLink: "https://www.youtube.com/embed/AgtUbSiLtLE?",
+    youtubeLink: "https://www.youtube.com/embed/yp3DkJlPr1Y?",
   });
   const [fields2, setFields2] = useState({
-    youtubeLink: "https://www.youtube.com/embed/AgtUbSiLtLE?",
+    youtubeLink: "https://www.youtube.com/embed/yp3DkJlPr1Y?",
   });
   const [fields3, setFields3] = useState({
-    youtubeLink: "https://www.youtube.com/embed/AgtUbSiLtLE?",
+    youtubeLink: "https://www.youtube.com/embed/yp3DkJlPr1Y?",
   });
   const [form1, form2, form3] = AntForm.useForm();
 
@@ -90,7 +91,7 @@ function Ad() {
                 <h5>版位1</h5>
                 <Row>
                   <Col>
-                    <Upload name="ad1" action="" onChange={handleChange}>
+                    <Upload name="ad1" {...props}>
                       <AntButton icon={<UploadOutlined />}>
                         上傳影片/圖片
                       </AntButton>

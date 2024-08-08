@@ -3,10 +3,14 @@ import React from "react";
 
 // react-bootstrap components
 import { Card, Container, Row, Col } from "react-bootstrap";
-import { Tabs } from "antd";
+import { Tabs, InputNumber } from "antd";
 
 function Cart() {
   const uploadImageCallBack = () => {};
+
+  const onChange = (value) => {
+    console.log("changed", value);
+  };
 
   return (
     <>
@@ -34,7 +38,15 @@ function Cart() {
                     <p>介紹</p>
                     <hr />
                     <p>$價格</p>
-                    <p>數量</p>
+                    <div style={{ display: "flex", alignItems: "baseline" }}>
+                      <p>數量：</p>
+                      <InputNumber
+                        min={1}
+                        max={10}
+                        defaultValue={1}
+                        onChange={onChange}
+                      />
+                    </div>
                   </Col>
                 </Row>
               </Card.Body>

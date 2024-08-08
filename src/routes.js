@@ -25,7 +25,6 @@ import Maps from "views/Maps.js";
 import Notifications from "views/Notifications.js";
 import Upgrade from "views/Upgrade.js";
 import Info from "views/Info";
-import Fix from "views/Fix";
 import Qa from "views/Qa";
 import Cart from "views/Cart";
 import UserList from "views/UserList";
@@ -45,6 +44,20 @@ const dashboardRoutes = [
     name: "管理員帳號設定",
     icon: "nc-icon nc-settings-gear-64",
     component: UserProfile,
+    layout: "/admin",
+  },
+  {
+    path: "/order",
+    name: "訂單管理",
+    icon: "nc-icon nc-notes",
+    component: OrderList,
+    layout: "/admin",
+  },
+  {
+    path: "/user",
+    name: "會員資料管理",
+    icon: "nc-icon nc-circle-09",
+    component: UserList,
     layout: "/admin",
   },
   {
@@ -69,38 +82,17 @@ const dashboardRoutes = [
     layout: "/admin",
   },
   {
-    path: "/fix",
-    name: "線上報修",
-    icon: "nc-icon nc-settings-90",
-    component: Fix,
-    layout: "/admin",
-  },
-  {
     path: "/info",
-    name: "訂購須知",
+    name: "購買須知",
     icon: "nc-icon nc-single-copy-04",
     component: Info,
     layout: "/admin",
   },
   {
     path: "/qa",
-    name: "線上諮詢",
+    name: "常見問題",
     icon: "nc-icon nc-chat-round",
     component: Qa,
-    layout: "/admin",
-  },
-  {
-    path: "/user",
-    name: "會員資料管理",
-    icon: "nc-icon nc-circle-09",
-    component: UserList,
-    layout: "/admin",
-  },
-  {
-    path: "/order",
-    name: "訂單管理",
-    icon: "nc-icon nc-notes",
-    component: OrderList,
     layout: "/admin",
   },
   {
